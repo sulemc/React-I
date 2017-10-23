@@ -6,7 +6,7 @@ class App extends Component {
       super();
       this.state = {
        thingToDo: '',
-        listToDo: []
+        listToDo: {}
       };
       this.handleThingToDo = this.handleThingToDo.bind(this);
       this.handleAddObligation = this.handleAddObligation.bind(this);
@@ -17,7 +17,8 @@ class App extends Component {
     handleAddObligation() {
       let obligation = this.state.thingToDo;
       const listToDo = this.state.listToDo;
-      listToDo.push(obligation);
+      listToDo[text]= obligation;
+      listToDo[completed] = false;
       this.setState({ listToDo, thingToDo: '' });
     }
     render() {
